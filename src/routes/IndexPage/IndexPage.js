@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "dva";
 import { Link } from "dva/router";
-import { Spin, Alert } from "antd";
+import { Spin } from "antd";
 import HeaderBar from "../../components/HeaderBar/index";
 import styles from "./IndexPage.less";
 import dva from "../../assets/dva.jpeg";

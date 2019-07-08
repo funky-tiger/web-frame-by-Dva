@@ -14,7 +14,7 @@ module.exports = {
         "no-lonely-if": "error",
         "no-multi-spaces": "error",
         "no-multiple-empty-lines": ["error", { max: 2 }],
-        "no-param-reassign": "error",
+        "no-param-reassign": "warn", // 函数参数未注册
         "no-spaced-func": "error",
         "no-use-before-define": "warn",
         "no-unused-vars": "warn",

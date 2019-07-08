@@ -1,7 +1,18 @@
+@import "../../App.global.less";
+
+@divide: 10;
+@pswWidth: 320;
+@ppr: 320px / @divide / 1rem;
+li {
+  // width:测量值/@ppr;
+  width: 200px / @ppr;
+}
 .bg {
-  width: 100vw;
-  height: 100vh;
-  background-color: pink;
+  // width: 100rem;
+  // width: 200px / @ppr;
+  // height: 100vh;
+  height: 3rem;
+  background-color: @bgPink;
   h2 {
     color: skyblue;
     line-height: 10rem;

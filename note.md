@@ -43,11 +43,23 @@
      > https://blog.csdn.net/yjaspire/article/details/90180226/
 - 8. .stylelintrc 配置
 - 9. axios 拦截器中使用 store 的 dispatch 实现路由跳转
-- 10. 全局 global 样式文件
+- 10. 🙆 全局 global 样式文件
 - 11. 配置全局的 font-size 来配合使用 rem
-- 12. 区分开发/生产环境 .env
+- 12. ️️️⚠️ 区分开发/生产环境 .env
 - 13. .editorconfig 配置 - 配置编辑器的一些设置
-- 14. subscriptions/声明周期
+- 14. ⚠️ subscriptions/生命周期
+- 15. 🙆browserRouter/hashRouter
+- 16. dva-hmr
+- 17. 配置动态加载 dva/dynamic
+
+## subscriptions 监听
+
+- 监听路由变化，鼠标，键盘变化，服务器连接变化，状态变化等，根据不同的变化做出相应的处理
+
+## browserHistory 问题：二级路由如（localhost:8080/message/detail/:id）,在开发环境下刷新后会报错
+
+- 解决办法：
+  > index.html 中，设置引用为绝对路径 /src/somefile.js 而不是 src/somefile.js
 
 ## 优化复杂页面的 model 和 routes 架构整理
 
@@ -55,8 +67,23 @@
 - 允许传入一个目录进行搜索，一个标志指示是否应该搜索子目录，还有一个正则表达式来匹配文件
 - 在构建时 webpack 会解析 require.context()代码
 - 取出当前目录下的 js 文件，并过滤掉 index.js 文件，再用 map 遍历文件名，context 返回 default 方法
+
   > models/index.js
   > index.js
+
+- app.dva({})所有可配置的钩子
+  > const app = dva({
+  > history,
+  > initialState,
+  > onError,
+  > onAction,
+  > onStateChange,
+  > onReducer,
+  > onEffect,
+  > onHmr,
+  > extraReducers,
+  > extraEnhancers,
+  > })
 
 ## 配置全局请求 axios
 
@@ -64,6 +91,21 @@
 - 相应配置文件
   > /utils/axiosSetting.js
   > /utils/request.js
+
+## 配置全局处理错误
+
+- 1. 在 axios 拦截器中实现
+- 2. 在 index.js 中 app.dva({onError:})实现
+
+## 打印 redux 日志
+
+- npm i redux-logger -D
+- 在 index.js 中 app.dva({onAction:})实现
+
+## dva 中派发动作的两种方式
+
+- model 中通过 effects 中的 put 去派发
+- 组件中通过 this.props.dispatch 去派发
 
 ## dva 中使用 dva-router 的 routerRedux 来跳转路由跳转
 

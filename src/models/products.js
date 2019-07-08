@@ -1,8 +1,27 @@
 import { fetchData, fetchDataByPost } from "../services/products";
+import key from "keymaster";
+
 export default {
     namespace: "products",
     state: {
         userInfoList: []
+    },
+    subscriptions: {
+        setup({ dispatch, history }) {
+            history.listen(pathname => {
+                console.log("路由监听", pathname);
+            });
+        },
+        onClick({ dispatch }) {
+            document.addEventListener("click", e => {
+                console.log("鼠标事件监听", e);
+            });
+        },
+        keyEvent(dispatch) {
+            key("⌘+up, ctrl+up", e => {
+                console.log("键盘事件监听", e);
+            });
+        }
     },
     reducers: {
         delete(state, { payload: id }) {

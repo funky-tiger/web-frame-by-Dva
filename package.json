@@ -12,6 +12,8 @@
     "babel-plugin-import": "^1.12.0",
     "dva": "^2.4.1",
     "dva-loading": "^3.0.9",
+    "keymaster": "^1.6.2",
+    "postcss-pxtorem": "^4.0.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
@@ -25,6 +27,7 @@
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.12.0",
     "redbox-react": "^1.4.3",
+    "redux-logger": "^3.0.6",
     "roadhog": "^2.5.0-beta.4",
     "stylelint": "^10.1.0"
   }
