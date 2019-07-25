@@ -14,6 +14,10 @@ class IndexPage extends React.Component {
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch({
+            type: "products/getDevDataByCihai",
+            params: { keyword: "", page: 1, size: 20 }
+        });
+        dispatch({
             type: "products/asyncFetchData",
             params: { name: "tigers", phone: "18721565476" }
         });

@@ -4,12 +4,13 @@ import axios from "axios";
 import "./axiosSetting";
 
 const request = async (method, url, params, ...opts) => {
+    console.log("params::::::", params);
     let _options = {};
     if (method.indexOf("/") > -1) {
         // 不传method默认使用get
         _options = {
             method: "get",
-            headers: params.headers,
+            headers: params && params.headers ? params.headers : {},
             params: url,
             url: method
         };

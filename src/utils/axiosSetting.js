@@ -71,7 +71,6 @@ axios.interceptors.response.use(
         ); // for debug
         if (error === undefined || error.code === "ECONNABORTED") {
             message.warning("服务请求超时");
-            return Promise.reject(error);
         }
 
         // message.error(`${status}:${text}`);

@@ -1,7 +1,13 @@
-## 通过 npm 安装 antd 和 babel-plugin-import。
+## 安装 dva
 
-- babel-plugin-import 用来按需加载 antd 的脚本和样式
-- npm install antd babel-plugin-import --save
+- npm i dva -S
+
+## 订阅事件 subscriptions
+
+- 用于订阅一个数据源，然后根据条件 dispatch 需要的 action。数据源可以是当前的时间，服务器的 websocket 连接，keyboard 输入，geolocation 网络地址的变化，history 路由变化等
+- subscriptions 中订阅的所有方法在组件挂载时会执行一遍，提供了{dispatch,history}两个属性，可以派发动作/监听路由等等
+- subscriptions 是全局的，和组件本身没有关系。组件销毁后 subscriptions 还在
+  > npm i keymaster -S
 
 ## dva 介绍
 
@@ -42,15 +48,15 @@
 - 7. dva 数据的 mock
      > https://blog.csdn.net/yjaspire/article/details/90180226/
 - 8. .stylelintrc 配置
-- 9. axios 拦截器中使用 store 的 dispatch 实现路由跳转
+- 9. 🙆 axios 拦截器中使用 store 的 dispatch 实现路由跳转 (替换方案解决)
 - 10. 🙆 全局 global 样式文件
-- 11. 配置全局的 font-size 来配合使用 rem
+- 11. 🙆 配置全局的 font-size 来配合使用 rem
 - 12. ️️️⚠️ 区分开发/生产环境 .env
-- 13. .editorconfig 配置 - 配置编辑器的一些设置
-- 14. ⚠️ subscriptions/生命周期
-- 15. 🙆browserRouter/hashRouter
-- 16. dva-hmr
-- 17. 配置动态加载 dva/dynamic
+- 13. 🙆 .editorconfig 配置 - 配置编辑器的一些设置
+- 14. 🙆 subscriptions/生命周期
+- 15. 🙆 browserRouter/hashRouter
+- 16. 🙆 dva-hmr
+- 17. 🙆 配置动态加载 dva/dynamic
 
 ## subscriptions 监听
 

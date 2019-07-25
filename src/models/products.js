@@ -1,4 +1,4 @@
-import { fetchData, fetchDataByPost } from "../services/products";
+import { fetchData, fetchDataByPost, getDevData } from "../services/products";
 import key from "keymaster";
 
 export default {
@@ -42,12 +42,21 @@ export default {
     },
     effects: {
         *asyncFetchData(action, { call, put }) {
+            console.log("lalallala~");
             const response = yield call(fetchData, action.params);
             yield put({ type: "setData", payload: response.data });
         },
         *asyncFetchDataByPost(action, { call, put }) {
+            console.log("lulululullu~", action);
+
             const response = yield call(fetchDataByPost, action.params);
             yield put({ type: "setData", payload: response.data });
+        },
+        *getDevDataByCihai(action, { call, put }) {
+            console.log("bibibiibibibbibiib~~");
+
+            const response = yield call(getDevData, action.params);
+            console.log("真实测试环境数据", response);
         }
     }
 };

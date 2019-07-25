@@ -1,5 +1,6 @@
 import React from "react";
 import { Router, Route, Switch } from "dva/router";
+import getDynamic from "./utils/dynamic";
 // import asyncComponent from "./utils/asyncComponent.js";
 import IndexPage from "./routes/IndexPage/IndexPage";
 import News from "./routes/News/index";
